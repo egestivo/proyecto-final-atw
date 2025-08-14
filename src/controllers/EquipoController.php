@@ -36,14 +36,33 @@ class EquipoController {
         $payload = json_decode(file_get_contents('php://input'), true);
 
         if ($method === 'POST') {
+            // Convertir hackathonId string a int (o usar un mapeo)
+            $hackathonIdInt = 1; // Por defecto
+            if (isset($payload['hackathonId'])) {
+                if (is_numeric($payload['hackathonId'])) {
+                    $hackathonIdInt = (int)$payload['hackathonId'];
+                } else {
+                    // Mapeo de strings a IDs
+                    $hackathonMap = [
+                        'eduhack2025' => 1,
+                        'eduhack2024' => 2,
+                    ];
+                    $hackathonIdInt = $hackathonMap[$payload['hackathonId']] ?? 1;
+                }
+            }
+
+            // Crear equipo simple según el documento: ID, nombre, hackathon, lista de participantes
             $equipo = new Equipo(
                 $payload['nombre'],
-                (int)($payload['hackathonId'] ?? 1),
-                $payload['descripcion'] ?? null
+                $hackathonIdInt
             );
 
+            $success = $this->equipoRepository->create($equipo);
+
             echo json_encode([
-                'success' => $this->equipoRepository->create($equipo),
+                'success' => $success,
+                'equipo_id' => $equipo->getId(),
+                'participantes_a_agregar' => count($payload['participanteIds'] ?? [])
             ]);
             return;
         }

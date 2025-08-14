@@ -1,0 +1,472 @@
+/* ===== TEMA OSCURO EDUHACK ===== */
+
+/* Variables CSS para consistencia */
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2d2d2d;
+    --accent-bg: #3a3a3a;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border-color: #404040;
+    --hover-bg: #4a4a4a;
+    --success-color: #4CAF50;
+    --warning-color: #FF9800;
+    --error-color: #F44336;
+    --info-color: #2196F3;
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-light: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* ===== ESTILOS GLOBALES ===== */
+body {
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== HEADER PRINCIPAL ===== */
+.main-header {
+    background: var(--gradient-primary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-dark) !important;
+}
+
+.main-header .x-panel-header-title {
+    color: var(--text-primary) !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ===== TOOLBAR NAVIGATION ===== */
+.main-toolbar {
+    background: var(--secondary-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.main-toolbar .x-btn {
+    background: transparent !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    margin: 2px !important;
+    transition: all 0.3s ease !important;
+}
+
+.main-toolbar .x-btn:hover {
+    background: var(--hover-bg) !important;
+    border-color: var(--info-color) !important;
+    box-shadow: var(--shadow-light) !important;
+    transform: translateY(-1px) !important;
+}
+
+.main-toolbar .x-btn-pressed {
+    background: var(--info-color) !important;
+    border-color: var(--info-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* ===== GRIDS PRINCIPALES ===== */
+.main-grid {
+    background: var(--secondary-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    box-shadow: var(--shadow-dark) !important;
+}
+
+.main-grid .x-panel-header {
+    background: var(--gradient-secondary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    font-weight: bold !important;
+}
+
+.main-grid .x-grid-header-ct {
+    background: var(--accent-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.main-grid .x-column-header {
+    background: var(--accent-bg) !important;
+    border-right: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+}
+
+.main-grid .x-column-header:hover {
+    background: var(--hover-bg) !important;
+}
+
+.main-grid .x-grid-body {
+    background: var(--secondary-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+.main-grid .x-grid-row {
+    border-bottom: 1px solid var(--border-color) !important;
+    transition: background 0.2s ease !important;
+}
+
+.main-grid .x-grid-row:hover {
+    background: var(--hover-bg) !important;
+}
+
+.main-grid .x-grid-row-selected {
+    background: rgba(33, 150, 243, 0.2) !important;
+    border-color: var(--info-color) !important;
+}
+
+.main-grid .x-grid-cell {
+    border-right: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* ===== TOOLBARS DE GRIDS ===== */
+.main-grid .x-toolbar {
+    background: var(--accent-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 8px !important;
+}
+
+/* ===== BOTONES ESPECIALIZADOS ===== */
+.add-button {
+    background: var(--success-color) !important;
+    border-color: var(--success-color) !important;
+    color: white !important;
+}
+
+.add-button:hover {
+    background: #45a049 !important;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3) !important;
+}
+
+.edit-button {
+    background: var(--info-color) !important;
+    border-color: var(--info-color) !important;
+    color: white !important;
+}
+
+.edit-button:hover {
+    background: #1976D2 !important;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3) !important;
+}
+
+.delete-button {
+    background: var(--error-color) !important;
+    border-color: var(--error-color) !important;
+    color: white !important;
+}
+
+.delete-button:hover {
+    background: #d32f2f !important;
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3) !important;
+}
+
+.refresh-button {
+    background: var(--warning-color) !important;
+    border-color: var(--warning-color) !important;
+    color: white !important;
+}
+
+.refresh-button:hover {
+    background: #F57C00 !important;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3) !important;
+}
+
+.members-button {
+    background: #9C27B0 !important;
+    border-color: #9C27B0 !important;
+    color: white !important;
+}
+
+.members-button:hover {
+    background: #7B1FA2 !important;
+    box-shadow: 0 2px 8px rgba(156, 39, 176, 0.3) !important;
+}
+
+/* ===== DIALOGS Y VENTANAS ===== */
+.dialog-window {
+    background: var(--secondary-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dialog-window .x-window-header {
+    background: var(--gradient-primary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    border-radius: 12px 12px 0 0 !important;
+    color: var(--text-primary) !important;
+    font-weight: bold !important;
+}
+
+.dialog-window .x-window-header-title {
+    color: var(--text-primary) !important;
+    font-size: 16px !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dialog-form {
+    background: var(--secondary-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+.dialog-form .x-form-item-label {
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+}
+
+.dialog-form .x-form-field {
+    background: var(--accent-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border-radius: 4px !important;
+}
+
+.dialog-form .x-form-field:focus {
+    border-color: var(--info-color) !important;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2) !important;
+}
+
+.dialog-form .x-form-textarea {
+    background: var(--accent-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border-radius: 4px !important;
+}
+
+/* ===== BOTONES DE DIALOGO ===== */
+.save-button {
+    background: var(--success-color) !important;
+    border-color: var(--success-color) !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.save-button:hover {
+    background: #45a049 !important;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4) !important;
+}
+
+.cancel-button {
+    background: var(--accent-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-secondary) !important;
+}
+
+.cancel-button:hover {
+    background: var(--hover-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+/* ===== COMBOBOXES Y SELECTS ===== */
+.x-form-trigger {
+    background: var(--accent-bg) !important;
+    border-left: 1px solid var(--border-color) !important;
+}
+
+.x-boundlist {
+    background: var(--secondary-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 4px !important;
+    box-shadow: var(--shadow-dark) !important;
+}
+
+.x-boundlist-item {
+    color: var(--text-primary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.x-boundlist-item:hover {
+    background: var(--hover-bg) !important;
+}
+
+.x-boundlist-selected {
+    background: var(--info-color) !important;
+    color: white !important;
+}
+
+/* ===== FIELDSETS ===== */
+.x-fieldset {
+    background: var(--accent-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+}
+
+.x-fieldset-header {
+    background: var(--secondary-bg) !important;
+    color: var(--text-primary) !important;
+    font-weight: bold !important;
+}
+
+/* ===== SCROLLBARS PERSONALIZADOS ===== */
+.x-grid-view::-webkit-scrollbar,
+.x-panel-body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.x-grid-view::-webkit-scrollbar-track,
+.x-panel-body::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+    border-radius: 4px;
+}
+
+.x-grid-view::-webkit-scrollbar-thumb,
+.x-panel-body::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.x-grid-view::-webkit-scrollbar-thumb:hover,
+.x-panel-body::-webkit-scrollbar-thumb:hover {
+    background: var(--info-color);
+}
+
+/* ===== MENSAJES Y ALERTAS ===== */
+.x-message-box {
+    background: var(--secondary-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    box-shadow: var(--shadow-dark) !important;
+}
+
+.x-message-box .x-window-header {
+    background: var(--gradient-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+.x-message-box .x-panel-body {
+    background: var(--secondary-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+/* ===== ANIMACIONES Y TRANSICIONES ===== */
+.x-panel,
+.x-grid,
+.x-btn,
+.x-form-field {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* ===== EFECTOS HOVER GLOBALES ===== */
+.x-btn:not(.x-btn-disabled):hover {
+    transform: translateY(-1px) !important;
+}
+
+.x-grid-row:hover {
+    box-shadow: inset 0 0 0 1px var(--info-color) !important;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .main-toolbar .x-btn {
+        margin: 1px !important;
+        padding: 6px 8px !important;
+        font-size: 12px !important;
+    }
+    
+    .dialog-window {
+        width: 95% !important;
+        max-width: 500px !important;
+    }
+    
+    .main-grid .x-column-header {
+        font-size: 12px !important;
+        padding: 4px !important;
+    }
+}
+
+/* ===== INDICADORES DE ESTADO ===== */
+.status-success { color: var(--success-color) !important; }
+.status-warning { color: var(--warning-color) !important; }
+.status-error { color: var(--error-color) !important; }
+.status-info { color: var(--info-color) !important; }
+
+/* ===== BADGES Y CHIPS ===== */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.badge-success { background: var(--success-color); }
+.badge-warning { background: var(--warning-color); }
+.badge-error { background: var(--error-color); }
+.badge-info { background: var(--info-color); }
+
+/* ===== LOADING SPINNER PERSONALIZADO ===== */
+.x-mask {
+    background: rgba(26, 26, 26, 0.8) !important;
+}
+
+.x-mask-msg {
+    background: var(--secondary-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    color: var(--text-primary) !important;
+    box-shadow: var(--shadow-dark) !important;
+}
+
+/* ===== CARDS Y PANELS ESPECIALES ===== */
+.info-card {
+    background: var(--accent-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    padding: 16px !important;
+    margin: 8px !important;
+    box-shadow: var(--shadow-light) !important;
+}
+
+.info-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-dark) !important;
+}
+
+/* ===== OVERRIDE DE EXTJS DEFAULTS ===== */
+.x-panel-default {
+    background-color: var(--secondary-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+.x-panel-header-default {
+    background: var(--accent-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+.x-toolbar-default {
+    background: var(--accent-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+.x-btn-default-small {
+    background: var(--accent-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* ===== ÚLTIMA CAPA: FORZAR ESTILOS ===== */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) var(--primary-bg);
+}
+
+/* ===== GLOW EFFECTS ===== */
+.glow-success {
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5) !important;
+}
+
+.glow-error {
+    box-shadow: 0 0 10px rgba(244, 67, 54, 0.5) !important;
+}
+
+.glow-info {
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.5) !important;
+}

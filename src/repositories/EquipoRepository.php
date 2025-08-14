@@ -93,7 +93,7 @@ class EquipoRepository implements RepositoryInterface
             
             // Escapar valores
             $nombre = $this->connection->quote($entity->getNombre());
-            $descripcion = $this->connection->quote($entity->getDescripcion());
+            $descripcion = $this->connection->quote($entity->getDescripcion() ?? '');
             $hackathonId = $entity->getHackathonId();
             $estado = $this->connection->quote($entity->getEstado());
             $maxIntegrantes = $entity->getMaxIntegrantes();

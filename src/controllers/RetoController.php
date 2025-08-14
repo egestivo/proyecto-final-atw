@@ -43,7 +43,7 @@ class RetoController {
                 $reto = new RetoExperimental(
                     $payload['titulo'],
                     $payload['descripcion'],
-                    $payload['nivelDificultad'] ?? 'medio',
+                    $payload['dificultad'] ?? 'basico',
                     $payload['tecnologiasRequeridas'] ?? '',
                     (string)($payload['hackathonId'] ?? '1'),
                     $payload['enfoquePedagogico'] ?? 'STEM'
@@ -52,7 +52,7 @@ class RetoController {
                 $reto = new RetoReal(
                     $payload['titulo'],
                     $payload['descripcion'],
-                    $payload['nivelDificultad'] ?? 'medio',
+                    $payload['dificultad'] ?? 'basico',
                     $payload['tecnologiasRequeridas'] ?? '',
                     (string)($payload['hackathonId'] ?? '1'),
                     $payload['entidadColaboradora'] ?? ''
@@ -76,7 +76,7 @@ class RetoController {
 
             if(isset($payload['titulo'])) $existing->setTitulo($payload['titulo']);
             if(isset($payload['descripcion'])) $existing->setDescripcion($payload['descripcion']);
-            if(isset($payload['nivelDificultad'])) $existing->setNivelDificultad($payload['nivelDificultad']);
+            if(isset($payload['dificultad'])) $existing->setDificultad($payload['dificultad']);
 
             echo json_encode([
                 'success' => $this->retoRepository->update($existing),
@@ -95,7 +95,7 @@ class RetoController {
             'id' => $reto->getId(),
             'titulo' => $reto->getTitulo(),
             'descripcion' => $reto->getDescripcion(),
-            'nivelDificultad' => $reto->getNivelDificultad(),
+            'dificultad' => $reto->getDificultad(),
             'hackathonId' => $reto->getHackathonId(),
             'tipo' => $reto->getTipo()
         ];

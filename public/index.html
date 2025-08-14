@@ -1,106 +1,71 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Publicaciones</title>
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-crisp/resources/theme-crisp-all.css" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+    <title>🚀 EDUHACK - Sistema de Gestión de Hackathons Educativos</title>
+    
+    <!-- ExtJS CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/classic/theme-neptune/resources/theme-neptune-all.css">
+    
+    <!-- Tema Oscuro Personalizado -->
+    <link rel="stylesheet" type="text/css" href="css/dark-theme.css">
+    
+    <!-- ExtJS JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/ext-all.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/classic/theme-neptune/theme-neptune.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+    <div id="app-container">
+        <div style="text-align: center; padding: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; min-height: 100vh;">
+            <div style="background: rgba(0,0,0,0.3); padding: 40px; border-radius: 20px; max-width: 600px; margin: 0 auto; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+                <h1 style="font-size: 3em; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">🚀 EDUHACK</h1>
+                <p style="font-size: 1.3em; margin: 20px 0; opacity: 0.9;">Sistema de Gestión de Hackathons Educativos</p>
+                <p style="font-size: 1em; margin: 20px 0; opacity: 0.7;">Plataforma integral para organizar y gestionar eventos de innovación tecnológica</p>
+                <div id="loading" style="color: #fff; font-size: 1.1em; margin-top: 30px;">
+                    <div style="display: inline-block; animation: spin 1s linear infinite;">⏳</div>
+                    Cargando aplicación...
+                </div>
+            </div>
+        </div>
+    </div>
 
-        
+    <!-- Scripts de la aplicación -->
+    <script src="js/hackaton.js"></script>
+    <script src="js/participantes.js"></script>
+    <script src="js/retos.js"></script>
+    <script src="js/equipos.js"></script>
+    <script src="js/app.js"></script>
+    
     <style>
-      
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #f4f7f9;
-            color: #333;
-            line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
         }
         
-
-        .x-panel-body {
-            background-color: #ffffff; 
-        }
-        
-        
-        .x-panel-header {
-            background-color: #004d80;
-            color: #ffffff;
-            border-color: #004d80;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-        
-        .x-panel-header-text-container-default-neptune {
-            color: #ffffff; 
-        }
-        
-        /* Estilos para los campos de formulario */
-        .x-form-item-label-default-neptune {
-            color: #004d80; 
-            font-weight: bold;
-        }
-        
-        .x-form-text-default-neptune,
-        .x-form-field-default-neptune {
-            border-color: #ccc;
-            border-radius: 4px;
-            padding: 8px 10px;
-        }
-        
-
-        .x-btn-default-toolbar-small {
-            background-color: #007bff; 
-            border-color: #007bff;
-            color: #ffffff;
-            font-weight: bold;
-            border-radius: 4px;
-            padding: 10px 15px;
-        }
-        
-        .x-btn-default-toolbar-small:hover {
-            background-color: #0056b3; 
-            border-color: #0056b3;
-        }
-        
-        .x-grid-header-ct-default-neptune {
-            background-color: #e2eef6; 
-            border-color: #d1e2f3;
-        }
-        
-        .x-grid-cell {
-            background-color: #ffffff;
-            border-color: #e6e6e6;
-        }
-        
-        .x-grid-row-alt .x-grid-cell {
-            background-color: #f9f9f9; 
-        }
-        
-        .x-grid-row-over .x-grid-cell {
-            background-color: #d1e2f3; 
-        }
-        
-       
-        .x-box-mc {
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        #app-container {
+            min-height: 100vh;
         }
     </style>
     
-    
-</head>
-
-<body>
+    <script>
+        Ext.onReady(function() {
+            // La aplicación se inicializa desde app.js
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                // Aquí se podría agregar una animación de fade-out del splash screen
+            }, 1500);
+        });
+    </script>
 </body>
-    <div id="app"></div>
-    <script src="js/paticipantes.js"></script>
-    <script src="js/equipos.js"></script>
-    <script src="js/hackaton.js"></script>
-    <script src="js/retos.js"></script>
-    <script src="js/app.js"></script>
 </html>

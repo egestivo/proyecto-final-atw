@@ -68,8 +68,8 @@ class HackathonRepository implements RepositoryInterface
             // Escapar valores
             $nombre = $this->connection->quote($entity->getNombre());
             $descripcion = $this->connection->quote($entity->getDescripcion());
-            $fechaInicio = $this->connection->quote($entity->getFechaInicio());
-            $fechaFin = $this->connection->quote($entity->getFechaFin());
+            $fechaInicio = $this->connection->quote($entity->getFechaInicio()->format('Y-m-d'));
+            $fechaFin = $this->connection->quote($entity->getFechaFin()->format('Y-m-d'));
             $lugar = $this->connection->quote($entity->getLugar());
             $estado = $this->connection->quote($entity->getEstado());
             
@@ -98,8 +98,8 @@ class HackathonRepository implements RepositoryInterface
             $id = $entity->getId();
             $nombre = $this->connection->quote($entity->getNombre());
             $descripcion = $this->connection->quote($entity->getDescripcion());
-            $fechaInicio = $this->connection->quote($entity->getFechaInicio());
-            $fechaFin = $this->connection->quote($entity->getFechaFin());
+            $fechaInicio = $this->connection->quote($entity->getFechaInicio()->format('Y-m-d'));
+            $fechaFin = $this->connection->quote($entity->getFechaFin()->format('Y-m-d'));
             $lugar = $this->connection->quote($entity->getLugar());
             $estado = $this->connection->quote($entity->getEstado());
             
